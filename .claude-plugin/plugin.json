@@ -1,0 +1,20 @@
+{
+  "name": "francais-simple",
+  "displayName": "FrancaisSimple",
+  "version": "0.1.0",
+  "description": "Rédactions et réécritures techniques en français contrôlé, avec linter et benchmark.",
+  "author": {
+    "name": "Contributeurs FrancaisSimple"
+  },
+  "homepage": "https://github.com/NumaCornec/FrancaisSimple",
+  "repository": "https://github.com/NumaCornec/FrancaisSimple",
+  "license": "MIT",
+  "keywords": [
+    "français",
+    "documentation",
+    "langue contrôlée",
+    "skill"
+  ],
+  "skills": ["./skills/"],
+  "outputStyles": "./output-styles/"
+}

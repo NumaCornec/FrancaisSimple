@@ -1,0 +1,14 @@
+{
+  "name": "francais-simple",
+  "description": "Marketplace du projet FrancaisSimple.",
+  "owner": {
+    "name": "Contributeurs FrancaisSimple"
+  },
+  "plugins": [
+    {
+      "name": "francais-simple",
+      "source": "./",
+      "description": "Rédactions et réécritures techniques en français contrôlé, avec linter et benchmark."
+    }
+  ]
+}

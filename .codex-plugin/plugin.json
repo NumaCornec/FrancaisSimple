@@ -1,0 +1,34 @@
+{
+  "name": "francais-simple",
+  "version": "0.1.0",
+  "description": "Rédactions et réécritures techniques en français contrôlé, avec linter et benchmark.",
+  "author": {
+    "name": "Contributeurs FrancaisSimple",
+    "url": "https://github.com/NumaCornec/FrancaisSimple"
+  },
+  "homepage": "https://github.com/NumaCornec/FrancaisSimple",
+  "repository": "https://github.com/NumaCornec/FrancaisSimple",
+  "license": "MIT",
+  "keywords": [
+    "français",
+    "documentation",
+    "langue contrôlée",
+    "skill"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "FrancaisSimple",
+    "shortDescription": "Français technique contrôlé pour la documentation",
+    "longDescription": "Le skill interdit le conditionnel, le subjonctif, le participe présent et la nominalisation dans un livrable technique français. Il fournit un catalogue de 73 règles, cinq références, un linter déterministe et un benchmark reproductible.",
+    "developerName": "Contributeurs FrancaisSimple",
+    "category": "Productivity",
+    "capabilities": [
+      "Read"
+    ],
+    "websiteURL": "https://github.com/NumaCornec/FrancaisSimple",
+    "defaultPrompt": [
+      "Réécris cette procédure en français contrôlé.",
+      "Vérifie ce message d'erreur avec FrancaisSimple."
+    ]
+  }
+}

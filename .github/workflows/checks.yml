@@ -1,0 +1,19 @@
+name: checks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Auto-test du linter et contrôle des documents
+        run: |
+          python3 evals/fr_lint.py --self-test
+          python3 evals/fr_lint.py skills/francais-simple/SKILL.md skills/francais-simple/references/*.md
+      - name: Contrôle croisé des numéros et des classes
+        run: python3 evals/check_rules.py
+      - name: Contrôle des chiffres publiés
+        run: python3 evals/check_numbers.py
