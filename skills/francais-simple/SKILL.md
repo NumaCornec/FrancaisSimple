@@ -1,6 +1,6 @@
 ---
 name: francais-simple
-description: À employer pour toute rédaction ou réécriture technique en français : documentation, README, procédures d'exploitation, messages d'erreur, rapports d'incident, notes de version, prompts système, préparation de traduction. Déclencheurs : « écris ça simplement », « rédige en français contrôlé », « réécris ce message d'erreur », « applique FrancaisSimple ». Ne pas employer pour du marketing, du contenu de marque ou un article de blog.
+description: "À employer pour toute rédaction ou réécriture technique en français : documentation, README, procédures d'exploitation, messages d'erreur, rapports d'incident, notes de version, prompts système, préparation de traduction. Déclencheurs : « écris ça simplement », « rédige en français contrôlé », « réécris ce message d'erreur », « applique FrancaisSimple ». Ne pas employer pour du marketing, du contenu de marque ou un article de blog."
 ---
 
 # FrancaisSimple

@@ -11,3 +11,4 @@ Première version.
 - Ajout de `evals/check_numbers.py` pour recalculer chaque chiffre depuis les fichiers bruts.
 - Ajout du prompt système, de l'output style, des manifestes de plugin et des exemples avant et après.
 - Ajout de l'intégration continue : auto-test du linter, contrôle croisé, contrôle des chiffres.
+- Compatibilité `npx skills add` : description citée dans le frontmatter et contrôle automatique du frontmatter.

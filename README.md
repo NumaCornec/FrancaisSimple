@@ -28,6 +28,15 @@ Marketing copy, brand voice, and blog articles stay out of scope. The skill prod
 
 ## Installation
 
+Any supported agent, through the open skills CLI from [`vercel-labs/skills`](https://github.com/vercel-labs/skills):
+
+```
+npx skills add NumaCornec/FrancaisSimple --list
+npx skills add NumaCornec/FrancaisSimple --skill francais-simple -g -a codex -y
+```
+
+The repository uses the discovery convention the CLI expects: one folder per skill under `skills/`, each with a `SKILL.md` that carries a `name` and a quoted `description`. `evals/check_rules.py` fails the build when the frontmatter stops being valid YAML.
+
 Claude Code plugin, from this repository as a marketplace:
 
 ```

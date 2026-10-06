@@ -53,8 +53,46 @@ def numeros(texte: str) -> set[str]:
     return {f"FR-{m.group(1)}.{m.group(2)}" for m in MOTIF_NUMERO.finditer(texte)}
 
 
-def main() -> int:
+def verifier_frontmatter() -> list[str]:
+    """Contrôle le frontmatter lu par les harnais et par `npx skills`.
+
+    Une valeur non citée qui contient « : » casse l'analyse YAML de `npx skills`
+    et rend le skill invisible.
+    """
     erreurs: list[str] = []
+    lignes = SKILL.read_text(encoding="utf-8").splitlines()
+    if not lignes or lignes[0].strip() != "---":
+        return ["SKILL.md ne commence pas par un frontmatter YAML"]
+    fin = next((i for i, ligne in enumerate(lignes[1:], start=1) if ligne.strip() == "---"), None)
+    if fin is None:
+        return ["frontmatter YAML non fermé dans SKILL.md"]
+    champs = {}
+    for ligne in lignes[1:fin]:
+        if not ligne.strip():
+            continue
+        if ":" not in ligne:
+            erreurs.append(f"ligne de frontmatter sans clé : {ligne!r}")
+            continue
+        cle, valeur = ligne.split(":", 1)
+        champs[cle.strip()] = valeur.strip()
+    for cle in ("name", "description"):
+        if not champs.get(cle):
+            erreurs.append(f"frontmatter incomplet : {cle} manquant")
+    if champs.get("name") and champs["name"] != SKILL.parent.name:
+        erreurs.append(
+            f"le nom {champs['name']!r} diffère du dossier {SKILL.parent.name!r}"
+        )
+    description = champs.get("description", "")
+    if description and not (description.startswith('"') and description.endswith('"')):
+        if ": " in description:
+            erreurs.append(
+                "description non citée contenant « : », l'analyse YAML casse"
+            )
+    return erreurs
+
+
+def main() -> int:
+    erreurs: list[str] = verifier_frontmatter()
     if not SKILL.exists():
         print(f"fichier absent : {SKILL}")
         return 2
