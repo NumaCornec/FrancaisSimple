@@ -1,5 +1,7 @@
 # FrancaisSimple
 
+[![skills.sh](https://skills.sh/b/numacornec/francaissimple)](https://skills.sh/numacornec/francaissimple)
+
 An agent skill that forces an LLM to write readable technical French in one pass, with the discipline of a controlled language.
 
 The skill bans the four habits that make machine-written French hard to read: the conditional, the subjunctive, the present participle, and nominalization. It ships with a deterministic linter, a reproducible benchmark, and no runtime dependency beyond the Python standard library.
@@ -34,6 +36,8 @@ Any supported agent, through the open skills CLI from [`vercel-labs/skills`](htt
 npx skills add NumaCornec/FrancaisSimple --list
 npx skills add NumaCornec/FrancaisSimple --skill francais-simple -g -a codex -y
 ```
+
+The repository is listed in the skills.sh directory at [`skills.sh/numacornec/francaissimple`](https://skills.sh/numacornec/francaissimple). The listing is automatic: the directory indexes repositories from anonymous install telemetry, and no submission form exists.
 
 The repository uses the discovery convention the CLI expects: one folder per skill under `skills/`, each with a `SKILL.md` that carries a `name` and a quoted `description`. `evals/check_rules.py` fails the build when the frontmatter stops being valid YAML.
 
